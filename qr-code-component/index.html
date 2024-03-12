@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>qr-code-component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="center">
+    <div class="card">
+      <div class="center qr_container">
+        <div id="qr-code" class="hidden"></div>
+        <div id="loader">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle class="spinner_qM83" cx="4" cy="12" r="3" />
+            <circle class="spinner_qM83 spinner_oXPr" cx="12" cy="12" r="3" />
+            <circle class="spinner_qM83 spinner_ZTLf" cx="20" cy="12" r="3" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="content">
+        <h1>Improve your front-end skills by building projects</h1>
+        <p>
+          Scan the QR code to visit Frontend Mentor and take your coding skills
+          to the next level
+        </p>
+      </div>
+    </div>
+
+    <input type="text" placeholder="generate qr code" />
+
+    <script>
+      const DEBOUNCE_RATE_SEC = 0.5;
+
+      const inputBox = document.querySelector("input");
+      const spinner = document.getElementById("loader");
+      const qrCode = document.getElementById("qr-code");
+
+      const qr = document.createElement("img");
+      qrCode.insertAdjacentElement("afterbegin", qr);
+
+      function imgLoaded() {
+        qrCode.classList.remove("hidden");
+        spinner.classList.add("hidden");
+      }
+
+      qr.addEventListener("load", imgLoaded);
+
+      let timer;
+
+      inputBox.addEventListener("input", function (e) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          qr.src = `https://api.qrserver.com/v1/create-qr-code/?data=${
+            inputBox.value || "https://www.frontendmentor.io"
+          }&size=160x160&color=fff&bgcolor=2c7dfa`;
+          qrCode.classList.add("hidden");
+          spinner.classList.remove("hidden");
+        }, DEBOUNCE_RATE_SEC * 1000);
+      });
+
+      qr.src = `https://api.qrserver.com/v1/create-qr-code/?data=https://www.frontendmentor.io/&size=160x160&color=fff&bgcolor=2c7dfa`;
+    </script>
+  </body>
+</html>
