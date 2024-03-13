@@ -29,7 +29,7 @@ cd RecipePage
 
 ## Live Demo
 
-[RECIPE PAGE](https://venkatesh-recipe-page.netlify.app/
+[RECIPE PAGE](https://venkatesh-recipe-page.netlify.app/)
 
 ## License
 
