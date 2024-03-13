@@ -28,7 +28,7 @@ To view the QR Code Component Card project, simply navigate to the project folde
 
 ## Screenshots
 
-![screen shots](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H)
+![screen shots](https://res.cloudinary.com/dz209s6jk/image/upload/v1642681473/Challenges/lzfaukzhigbavv5sc26b.jpg)
 
 ## Live Demo
 
