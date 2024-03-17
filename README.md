@@ -19,6 +19,7 @@ This repository serves as a portfolio to showcase my progress and proficiency in
 Here are the projects included in this portfolio:
 
 - [qr-code-component](qr-code-component/): rontend Mentor challenge - creating a QR code component card.
+- [recipe-page](RecipePage/): rontend Mentor challenge - creating a Recipe page.
 - ...
 
 Each project folder contains the necessary files and resources to complete the challenge, including design files, HTML, CSS, and JavaScript files.
